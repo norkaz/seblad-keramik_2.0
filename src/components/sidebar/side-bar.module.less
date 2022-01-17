@@ -1,0 +1,93 @@
+@import "../../styles/variables.less";
+
+.sideBar {
+  position: absolute;
+  background: @navbarBackgroundColor;
+  z-index: 1003;
+  transition: ease all 0.3s;
+
+  &.top {
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(-100%);
+    &.open {
+      transform: translateY(0);
+    }
+    &.closed {
+      transform: translateY(-100%);
+    }
+    .sideBarHeader {
+      @media screen and (max-width: @breakPointThird) {
+        padding: 2vw;
+      }
+      .closeBtn {
+        color: #000;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: sticky;
+        top: 0;
+        font-size: 1.3rem;
+      }
+    }
+  }
+
+  &.left {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 80%;
+    transform: translateX(-100%);
+    .closeBtn {
+      display: none;
+    }
+    &.open {
+      transform: translateX(0);
+      .sideBarHeader {
+        .closeBtn {
+          border: 0;
+          padding: 0;
+          background: transparent;
+          z-index: 1001;
+          color: #fff;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          width: 40px;
+          right: -40px;
+          font-size: 1.3rem;
+        }
+      }
+    }
+    &.closed {
+      transform: translateX(-100%);
+    }
+  }
+
+  .sideBarContainer {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    .sideBarHeader {
+      .closeBtn {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: 0;
+        padding: 0;
+        background: transparent;
+        z-index: 1001;
+        font-size: 1.3rem;
+      }
+    }
+
+    .sideBarContent {
+      padding: 0;
+    }
+  }
+}

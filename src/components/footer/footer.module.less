@@ -1,0 +1,34 @@
+@import "../../styles/variables.less";
+
+.footer {
+  padding: @defaultPadding;
+  border-top: 2px solid @borderColor;
+  margin-top: auto;
+  .footerContainer {
+    display: flex;
+    justify-content: center;
+    .menuBox {
+      padding: 0 @defaultPadding;
+      .footerNavigation {
+        .menu {
+          .menuItem {
+            padding-bottom: 1rem;
+            .menuItemLink {
+              font-weight: @fontWeightMedium;
+            }
+          }
+        }
+      }
+      .socialMedia {
+        white-space: nowrap;
+        padding-bottom: 1rem;
+        a {
+          font-weight: @fontWeightMedium;
+          &:hover {
+            color: @linkColor;
+          }
+        }
+      }
+    }
+  }
+}

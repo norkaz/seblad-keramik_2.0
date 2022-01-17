@@ -1,0 +1,206 @@
+@import "./variables.less";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+}
+
+html,
+body,
+#root {
+  font-family: @defaultFont;
+  font-weight: @defaultFontWeight;
+  background: @backgroundColor;
+  margin: 0;
+  font-size: 1rem;
+  overflow-x: hidden;
+  height: 100%;
+}
+p a {
+  color: var(--linkColor);
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+a {
+  color: var(--textColor);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+p {
+  line-height: 140%;
+}
+
+.text-box {
+  @media screen and (max-width: @breakPointThird) {
+    padding: 0 @defaultPadding;
+  }
+}
+
+:root {
+  // general
+  --fontSize: @fontSize;
+  font-size: var(--fontSize);
+  // color
+  --textColor: @textColor;
+  --linkColor: @linkColor;
+  --primaryColor: #f09;
+  --secondaryColor: #039;
+  // sizes
+
+  // others
+  // header
+  --headerBackgroundColor: @headerBackgroundColor;
+  --headerTextColor: @headerTextColor;
+}
+
+@scroll-size: 10px;
+@scroll-foreground-color: #aaa;
+@scroll-background-color: #fefefe;
+@media screen and (min-width: @breakPointFirst) {
+  // For Chrome & Safari
+  &::-webkit-scrollbar {
+    width: @scroll-size;
+    height: @scroll-size;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: @scroll-foreground-color;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+  &::-webkit-scrollbar-track {
+    background: @scroll-background-color;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (min-width: @breakPointFirst) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  h4 {
+    font-size: 1.2rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: @breakPointFirst) and (min-width: @breakPointSecond) {
+  h1 {
+    font-size: 1.7rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  h3 {
+    font-size: 1.3rem;
+  }
+  h4 {
+    font-size: 1.15rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: @breakPointSecond) and (min-width: @breakPointThird) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+  }
+  h4 {
+    font-size: 1.05rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: @breakPointThird) {
+  h1 {
+    font-size: 1.3rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  h4 {
+    font-size: 0.9rem;
+  }
+  h5 {
+    font-size: 0.8rem;
+  }
+  body {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: @breakPointThird) {
+  &.hide-mobile {
+    display: none !important;
+  }
+}
+@media screen and (min-width: @breakPointThird) {
+  &.only-mobile {
+    display: none !important;
+  }
+}
+.hidden {
+  display: none;
+}
+
+// React modal carousel overwride
+
+.react-multi-carousel-list {
+  margin: 0 (-@defaultPadding / 2);
+
+  .react-multi-carousel-track {
+    padding-bottom: 1.5rem;
+  }
+  .react-multi-carousel-dot-list {
+    .react-multi-carousel-dot {
+      button {
+        border-width: 1px;
+        background: transparent;
+        width: 1rem;
+        height: 1rem;
+        border-color: @linkColor;
+      }
+      &.react-multi-carousel-dot--active {
+        button {
+          background: @linkColor;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../../styles/variables.less";
+
+.navigation {
+  .menu {
+    margin: 0;
+    padding: 0;
+    .menuItem {
+      list-style: none;
+      .menuItemLink {
+        display: block;
+        color: @navbarTextColor;
+        &:hover {
+          color: @linkColor;
+        }
+        &.active {
+          color: @linkColor;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  // Horizontal menu
+  &.horizontal {
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      .menuLtem {
+        padding: 0 @defaultPadding;
+      }
+    }
+  }
+  // Vertical menu
+  &.vertical {
+    .menu {
+      .menuItem {
+        .menuItemLink {
+          display: block;
+        }
+      }
+    }
+  }
+}

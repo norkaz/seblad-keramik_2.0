@@ -1,0 +1,67 @@
+@import "../../styles/variables.less";
+
+#wrapper {
+  min-height: 100vh;
+}
+#main {
+  background: @backgroundColor;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  .mainNavigation {
+    width: 100%;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    background: @navbarBackgroundColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: @breakPointFirst) and (min-width: @breakPointSecond) {
+    }
+    @media screen and (max-width: @breakPointSecond) and (min-width: @breakPointThird) {
+    }
+    @media screen and (max-width: @breakPointThird) {
+      display: none;
+    }
+    .menu {
+      .menuItem {
+        padding: 0;
+        .menuItemLink {
+          padding: 1rem;
+          font-size: 1.1rem;
+          color: @linkColor;
+          font-weight: @fontWeightMedium;
+          &.active {
+            text-decoration: none;
+            color: @navbarTextColor;
+            background: @borderColor;
+          }
+        }
+      }
+    }
+  }
+
+  #content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin-bottom: auto;
+  }
+}
+.sideBarNavigation {
+  .menu {
+    .menuItem {
+      .menuItemLink {
+        padding: 1rem;
+        font-size: 1.1rem;
+        &.active {
+          text-decoration: none;
+          color: @navbarTextColor;
+          background: @borderColor;
+        }
+      }
+    }
+  }
+}
